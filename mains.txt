@@ -1,0 +1,41 @@
+#ft_isalpha
+-----------
+
+#include <stdio.h>
+#include <ctype.h>
+
+int main(void)
+{
+    int c = 'a';
+    
+    printf("Original: %d\n", isalpha(c));
+    printf("Copia: %d\n", ft_isalpha(c));
+}
+
+#ft_isdigit
+-----------
+
+#include <stdio.h>
+#include <ctype.h>
+
+int main(void)
+{
+    int c = '1';
+
+    printf("Original: %d\n", isdigit(c));
+    printf("Copia: %d\n", ft_isdigit(c));
+}
+
+#ft_isalnum
+-----------
+
+#include <stdio.h>
+#include <ctype.h>
+
+int main(void)
+{
+    int c = '#';
+    
+    printf("Original: %d\n", isalnum(c));
+    printf("Copia: %d\n", ft_isalnum(c));
+}
