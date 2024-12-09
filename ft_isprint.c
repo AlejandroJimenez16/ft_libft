@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alejanjiga <alejanjiga@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/08 18:56:42 by alejandj          #+#    #+#             */
-/*   Updated: 2024/12/09 14:53:21 by alejanjiga       ###   ########.fr       */
+/*   Created: 2024/12/09 12:47:19 by alejandj          #+#    #+#             */
+/*   Updated: 2024/12/09 14:53:27 by alejanjiga       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isdigit(int c)
+int ft_isprint(int c)
 {
-    if (c >= '0' && c <= '9')
+    if (c >= 32 && c <= 126)
     {
         return (1);
     }
     else
     {
-        return (0);    
+        return (0);
     }
 }

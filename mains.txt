@@ -1,4 +1,4 @@
-#ft_isalpha
+#ft_is***
 -----------
 
 #include <stdio.h>
@@ -12,30 +12,16 @@ int main(void)
     printf("Copia: %d\n", ft_isalpha(c));
 }
 
-#ft_isdigit
+#ft_strlen
 -----------
 
+#include <string.h>
 #include <stdio.h>
-#include <ctype.h>
 
 int main(void)
 {
-    int c = '1';
+	char *str = "holaa";
 
-    printf("Original: %d\n", isdigit(c));
-    printf("Copia: %d\n", ft_isdigit(c));
-}
-
-#ft_isalnum
------------
-
-#include <stdio.h>
-#include <ctype.h>
-
-int main(void)
-{
-    int c = '#';
-    
-    printf("Original: %d\n", isalnum(c));
-    printf("Copia: %d\n", ft_isalnum(c));
+	printf("Original: %ld\n", strlen(str));
+    printf("Copia: %ld\n", ft_strlen(str));
 }
