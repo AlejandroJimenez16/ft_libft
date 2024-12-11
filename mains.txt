@@ -100,5 +100,38 @@ int main(void)
     ft_memmove(buffer + 3, buffer, 5);
 
     printf("Después: %s\n", buffer);
+}
 
+#ft_strlcpy
+-----------
+
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char dest[3];
+    char *src = "hola";
+
+    int tot_size = ft_strlcpy(dest, src, sizeof(dest));
+    printf("Tamaño de src: %d\n", tot_size);
+	printf("Cadena de destino: %s\n", dest);
+}
+
+#ft_strlcat
+-----------
+
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+	char dest[15] = "Hola";
+	char *src = " Mundo";
+	
+	int result = ft_strlcat(dest, src, 8);
+	
+	printf("Mi version: %d\n", result);
+
+	printf("Destino: %s\n", dest);
 }
