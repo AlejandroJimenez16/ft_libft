@@ -6,7 +6,7 @@
 /*   By: alejanjiga <alejanjiga@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 19:36:03 by alejandj          #+#    #+#             */
-/*   Updated: 2024/12/09 20:36:45 by alejanjiga       ###   ########.fr       */
+/*   Updated: 2024/12/10 13:31:54 by alejanjiga       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 void *ft_memset(void *s, int c, size_t n)
 {
     size_t i;
+    unsigned char *p;
     
     i = 0;
-    unsigned char *p = (unsigned char *)s;
+    p = (unsigned char *)s;
     while (i < n)
     {
-        p[i] = c;
+        p[i] = (unsigned char)c;
         i++;
     }
     return (s);
