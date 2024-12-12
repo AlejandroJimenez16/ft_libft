@@ -135,3 +135,22 @@ int main(void)
 
 	printf("Destino: %s\n", dest);
 }
+
+#ft_strchr
+----------
+
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+    char *s = "holas";
+    int c = 'H';
+    
+    char *result = ft_strchr(s, c);
+    if (result) {
+        printf("%s\n", result);
+    } else {
+        printf("Carácter no encontrado.\n");
+    }
+}
