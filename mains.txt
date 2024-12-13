@@ -136,8 +136,8 @@ int main(void)
 	printf("Destino: %s\n", dest);
 }
 
-#ft_strchr
-----------
+#ft_strchr y #ft_strchr
+-----------------------
 
 #include <stdio.h>
 #include <string.h>
@@ -150,6 +150,40 @@ int main(void)
     char *result = ft_strchr(s, c);
     if (result) {
         printf("%s\n", result);
+    } else {
+        printf("Carácter no encontrado.\n");
+    }
+}
+
+#ft_strncmp
+-----------
+
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+    char *s1 = "abc";
+    char *s2 = "abcd";
+    int n = 5;
+
+    printf("Original: %d\n", strncmp(s1, s2, n));
+    printf("Copia: %d\n", ft_strncmp(s1, s2, n));
+}
+
+#ft_memchr
+-----------
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char *buffer = "Hola mundo!";
+    void *result = ft_memchr(buffer, 'm', sizeof(buffer));
+
+    if (result != NULL) {
+        printf("Puntero encontrado: %p\n", result);
+        printf("Carácter encontrado: %c\n", *(char *)result);
     } else {
         printf("Carácter no encontrado.\n");
     }
