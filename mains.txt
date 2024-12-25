@@ -188,3 +188,54 @@ int main() {
         printf("Carácter no encontrado.\n");
     }
 }
+
+#ft_memcmp
+----------
+
+#include <string.h>
+#include <stdio.h>
+
+int main(void)
+{
+    char *s1 = "hola";
+    char *s2 = "holo";
+    size_t n = 4;
+    
+    printf("Original: %d\n", memcmp(s1, s2, n));
+    printf("Copia: %d\n", ft_memcmp(s1, s2, n));    
+}
+
+#ft_strnstr
+-----------
+
+#include<stdio.h>
+
+int main()
+{
+    const char *haystack = "Hello, world!";
+    const char *needle = "world";
+    size_t len = 12;
+
+    char *result = ft_strnstr(haystack, needle, len);
+
+    if (result)
+        printf("Encontrado: %s\n", result);
+    else
+        printf("No encontrado\n");
+
+    return 0;
+}
+
+#ft_atoi
+--------
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+    char *str = " +2345";
+
+    printf("Original: %d\n", atoi(str));
+    printf("Copia: %d\n", ft_atoi(str));
+}
