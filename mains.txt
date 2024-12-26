@@ -239,3 +239,21 @@ int main(void)
     printf("Original: %d\n", atoi(str));
     printf("Copia: %d\n", ft_atoi(str));
 }
+
+#ft_calloc
+--------
+
+#ft_strdup
+----------
+
+#include <stdio.h>
+
+int main(void)
+{
+    char *s = "ola k asee";
+    char *str;
+
+    str = ft_strdup(s);
+
+    printf("%s\n", str);
+}
