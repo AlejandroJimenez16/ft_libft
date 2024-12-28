@@ -257,3 +257,31 @@ int main(void)
 
     printf("%s\n", str);
 }
+
+#ft_substr
+----------
+
+#include<stdio.h>
+
+int main(void)
+{
+    char *s = "ola que ase";
+    char *sub = ft_substr(s, 4, 7);
+    printf("%s\n", sub);
+    free(sub);
+}
+
+#ft_strjoin
+-----------
+
+#include <stdio.h>
+
+int main(void)
+{
+    char *s1 = "QueFeo";
+    char *s2 = "Eres Nah";
+    
+    char *join = ft_strjoin(s1, s2);
+
+    printf("%s\n", join);
+}
