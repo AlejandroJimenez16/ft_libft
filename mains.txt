@@ -285,3 +285,19 @@ int main(void)
 
     printf("%s\n", join);
 }
+
+#ft_strtrim
+-----------
+
+#include <stdio.h>
+
+int main()
+{
+    char s1[] = "###Hello World#####";
+    char set[] = "#";
+
+    char *result = ft_strtrim(s1, set);
+    
+    printf("Resultado: '%s'\n", result);
+    return 0;
+}
