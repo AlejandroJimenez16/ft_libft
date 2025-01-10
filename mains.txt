@@ -325,3 +325,47 @@ int main (void)
 
     return (0);
 }
+
+#ft_strmapi
+-----------
+
+char prueba(unsigned int index, char c) {
+    return c + index;
+}
+
+#include <stdio.h>
+
+int main() {
+    const char *original = "abcd";
+    char *modified = ft_strmapi(original, prueba);
+
+    if (modified) {
+        printf("Original: %s\n", original);
+        printf("Modificada: %s\n", modified);
+        free(modified);
+    }
+
+}
+
+#ft_striteri
+------------
+
+void to_upper(unsigned int index, char *c)
+{
+    if (index % 2 == 0)
+        *c = ft_toupper(*c);
+}
+
+#include <stdio.h>
+
+int main()
+{
+    char str[] = "hola mundo";
+
+    printf("Antes: %s\n", str);
+
+    ft_striteri(str, to_upper);
+
+    printf("Después: %s\n", str);
+
+}
