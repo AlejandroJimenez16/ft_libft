@@ -301,3 +301,27 @@ int main()
     printf("Resultado: '%s'\n", result);
     return 0;
 }
+
+#ft_split
+---------
+
+#ft_itoa
+---------
+
+#include <stdio.h>
+
+int main (void)
+{
+    int n = INT_MAX;
+    
+    char *str = ft_itoa(n);
+    
+    printf("%s\n", str);
+
+    n = INT_MIN;
+    str = ft_itoa(n);
+    
+    printf("%s\n", str);
+
+    return (0);
+}
