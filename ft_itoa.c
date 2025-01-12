@@ -6,7 +6,7 @@
 /*   By: alejanjiga <alejanjiga@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 22:24:53 by alejanjiga        #+#    #+#             */
-/*   Updated: 2025/01/10 15:03:37 by alejanjiga       ###   ########.fr       */
+/*   Updated: 2025/01/12 18:39:10 by alejanjiga       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 //NO PASA LA NORMI, MAS LINEAS QUE LAS QUE DEBERIA
 
-int is_negative(int n)
+static int is_negative(int n)
 {
     if (n < 0)
     {
@@ -23,7 +23,7 @@ int is_negative(int n)
     return (0);
 }
 
-int obtain_num_digits(int n)
+static int obtain_num_digits(int n)
 {
     int len;
 
@@ -45,7 +45,7 @@ int obtain_num_digits(int n)
     return (len);     
 }
 
-char *special_cases(int n)
+static char *special_cases(int n)
 {
     char *result;
 

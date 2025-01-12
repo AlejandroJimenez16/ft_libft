@@ -16,7 +16,6 @@ int main(void)
 -----------
 
 #include <string.h>
-#include <stdio.h>
 
 int main(void)
 {
@@ -30,7 +29,6 @@ int main(void)
 -----------
 
 #include <string.h>
-#include <stdio.h>
 
 int main(void)
 {
@@ -51,7 +49,6 @@ int main(void)
 ----------
 
 #include <strings.h>
-#include <stdio.h>
 
 int main(void)
 {
@@ -71,7 +68,6 @@ int main(void)
 #ft_memcpy
 ----------
 
-#include <stdio.h>
 #include <string.h>
 
 int main(void)
@@ -88,7 +84,6 @@ int main(void)
 #ft_memmove
 -----------
 
-#include <stdio.h>
 #include <string.h>
 
 int main(void)
@@ -105,7 +100,6 @@ int main(void)
 #ft_strlcpy
 -----------
 
-#include <stdio.h>
 #include <string.h>
 
 int main()
@@ -121,7 +115,6 @@ int main()
 #ft_strlcat
 -----------
 
-#include <stdio.h>
 #include <string.h>
 
 int main(void)
@@ -139,7 +132,6 @@ int main(void)
 #ft_strchr y #ft_strchr
 -----------------------
 
-#include <stdio.h>
 #include <string.h>
 
 int main(void)
@@ -158,7 +150,6 @@ int main(void)
 #ft_strncmp
 -----------
 
-#include <stdio.h>
 #include <string.h>
 
 int main(void)
@@ -174,7 +165,6 @@ int main(void)
 #ft_memchr
 -----------
 
-#include <stdio.h>
 #include <string.h>
 
 int main() {
@@ -193,7 +183,6 @@ int main() {
 ----------
 
 #include <string.h>
-#include <stdio.h>
 
 int main(void)
 {
@@ -207,8 +196,6 @@ int main(void)
 
 #ft_strnstr
 -----------
-
-#include<stdio.h>
 
 int main()
 {
@@ -229,7 +216,6 @@ int main()
 #ft_atoi
 --------
 
-#include <stdio.h>
 #include <stdlib.h>
 
 int main(void)
@@ -246,8 +232,6 @@ int main(void)
 #ft_strdup
 ----------
 
-#include <stdio.h>
-
 int main(void)
 {
     char *s = "ola k asee";
@@ -261,8 +245,6 @@ int main(void)
 #ft_substr
 ----------
 
-#include<stdio.h>
-
 int main(void)
 {
     char *s = "ola que ase";
@@ -273,8 +255,6 @@ int main(void)
 
 #ft_strjoin
 -----------
-
-#include <stdio.h>
 
 int main(void)
 {
@@ -288,8 +268,6 @@ int main(void)
 
 #ft_strtrim
 -----------
-
-#include <stdio.h>
 
 int main()
 {
@@ -307,8 +285,6 @@ int main()
 
 #ft_itoa
 ---------
-
-#include <stdio.h>
 
 int main (void)
 {
@@ -333,8 +309,6 @@ char prueba(unsigned int index, char c) {
     return c + index;
 }
 
-#include <stdio.h>
-
 int main() {
     const char *original = "abcd";
     char *modified = ft_strmapi(original, prueba);
@@ -356,8 +330,6 @@ void to_upper(unsigned int index, char *c)
         *c = ft_toupper(*c);
 }
 
-#include <stdio.h>
-
 int main()
 {
     char str[] = "hola mundo";
@@ -368,4 +340,43 @@ int main()
 
     printf("Después: %s\n", str);
 
+}
+
+#ft_putchar_fd
+--------------
+
+int main(void) 
+{    
+    ft_putchar_fd('A', 1);
+    ft_putchar_fd('\n', 1);
+
+    ft_putchar_fd('B', 2);
+    ft_putchar_fd('\n', 2);
+}
+
+ft_putstr_fd & ft_putendl_fd
+----------------------------
+
+int main(void) 
+{    
+    char *s = "Hello, World!";
+    int fd = 1;
+
+    ft_putstr_fd(s, fd);
+}
+
+ft_putnbr_fd
+-------------
+
+int main (void)
+{
+    int fd = 1;
+    
+    ft_putnbr_fd(-2147483648, fd);
+    printf("\n");
+    ft_putnbr_fd(2147483647, fd);
+    printf("\n");
+    ft_putnbr_fd(0, fd);
+    printf("\n");
+    ft_putnbr_fd(-23451, fd);
 }

@@ -6,13 +6,13 @@
 /*   By: alejanjiga <alejanjiga@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 19:12:40 by alejanjiga        #+#    #+#             */
-/*   Updated: 2025/01/08 12:24:10 by alejanjiga       ###   ########.fr       */
+/*   Updated: 2025/01/12 18:41:09 by alejanjiga       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int is_in_set(char c, char const *set)
+static int is_in_set(char c, char const *set)
 {
     int i;
 
@@ -28,7 +28,7 @@ int is_in_set(char c, char const *set)
     return (0);
 }
 
-void obtain_start_end(int *start, int *end, char const *s1, char const *set)
+static void obtain_start_end(int *start, int *end, char const *s1, char const *set)
 {
     *start = 0;
     *end = ft_strlen(s1) - 1;

@@ -6,13 +6,13 @@
 /*   By: alejanjiga <alejanjiga@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 13:11:29 by alejanjiga        #+#    #+#             */
-/*   Updated: 2025/01/09 14:56:31 by alejanjiga       ###   ########.fr       */
+/*   Updated: 2025/01/12 18:40:15 by alejanjiga       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t num_elements_arr(char const *s, char c)
+static size_t num_elements_arr(char const *s, char c)
 {
     size_t i;
     size_t count;
@@ -43,7 +43,7 @@ size_t num_elements_arr(char const *s, char c)
     return (count);
 }
 
-void add_str_arr(char const *s, char c, char *str)
+static void add_str_arr(char const *s, char c, char *str)
 {
     
   
