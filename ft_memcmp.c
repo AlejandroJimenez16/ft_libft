@@ -3,31 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alejanjiga <alejanjiga@student.42.fr>      +#+  +:+       +#+        */
+/*   By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/25 17:05:15 by alejandj          #+#    #+#             */
-/*   Updated: 2024/12/25 17:19:05 by alejanjiga       ###   ########.fr       */
+/*   Created: 2025/01/13 16:24:12 by alejandj          #+#    #+#             */
+/*   Updated: 2025/01/13 16:26:54 by alejandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-    size_t i;
-    const unsigned char *p1;
-    const unsigned char *p2;
+	size_t				i;
+	const unsigned char	*p1;
+	const unsigned char	*p2;
 
-    i = 0;
-    p1 = (const unsigned char *)s1;
-    p2 = (const unsigned char *)s2;
-    while(i < n)
-    {
-        if(p1[i] != p2[i])
-        {
-            return(p1[i] - p2[i]);
-        }
-        i++;
-    }
-    return(0);
+	i = 0;
+	p1 = (const unsigned char *)s1;
+	p2 = (const unsigned char *)s2;
+	while (i < n)
+	{
+		if (p1[i] != p2[i])
+		{
+			return (p1[i] - p2[i]);
+		}
+		i++;
+	}
+	return (0);
 }

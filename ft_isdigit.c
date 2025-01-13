@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alejanjiga <alejanjiga@student.42.fr>      +#+  +:+       +#+        */
+/*   By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/08 18:56:42 by alejandj          #+#    #+#             */
-/*   Updated: 2024/12/09 14:53:21 by alejanjiga       ###   ########.fr       */
+/*   Created: 2025/01/13 13:23:58 by alejandj          #+#    #+#             */
+/*   Updated: 2025/01/13 13:24:37 by alejandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-    if (c >= '0' && c <= '9')
-    {
-        return (1);
-    }
-    else
-    {
-        return (0);    
-    }
+	if (c >= '0' && c <= '9')
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
 }

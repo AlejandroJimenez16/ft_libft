@@ -3,23 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alejanjiga <alejanjiga@student.42.fr>      +#+  +:+       +#+        */
+/*   By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/08 19:10:30 by alejandj          #+#    #+#             */
-/*   Updated: 2024/12/09 14:52:57 by alejanjiga       ###   ########.fr       */
+/*   Created: 2025/01/13 13:17:31 by alejandj          #+#    #+#             */
+/*   Updated: 2025/01/13 13:19:52 by alejandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
-    if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9'))
-    {
-        return (1);
-    }
-    else
-    {
-        return (0);
-    }
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')
+		|| (c >= '0' && c <= '9'))
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
 }

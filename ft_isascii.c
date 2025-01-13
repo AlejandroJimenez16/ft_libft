@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alejanjiga <alejanjiga@student.42.fr>      +#+  +:+       +#+        */
+/*   By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/09 12:27:07 by alejandj          #+#    #+#             */
-/*   Updated: 2024/12/09 14:53:12 by alejanjiga       ###   ########.fr       */
+/*   Created: 2025/01/13 13:22:17 by alejandj          #+#    #+#             */
+/*   Updated: 2025/01/13 13:23:40 by alejandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
-    if (c >= 0 && c <= 127)
-    {
-        return (1);
-    }
-    else
-    {
-        return (0);
-    }
+	if (c >= 0 && c <= 127)
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
 }
