@@ -6,67 +6,95 @@
 /*   By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 13:11:29 by alejanjiga        #+#    #+#             */
-/*   Updated: 2025/01/14 11:54:08 by alejandj         ###   ########.fr       */
+/*   Updated: 2025/01/14 17:38:53 by alejandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	num_elements_arr(char const *s, char c)
-{
-	size_t	i;
-	size_t	count;
-	int		in_segment;
+//MAÑANA OPTIMIZAR FUNCION
 
-	i = 0;
+int	words_count(char const *s, char c)
+{
+	int	i;
+	int in_word;
+	int count;
+
+	in_word = 0;
 	count = 0;
-	in_segment = 0;
+	i = 0;
 	while (s[i] != '\0')
 	{
 		if (s[i] == c)
 		{
-			if (in_segment)
-				in_segment = 0;
+			in_word = 0;
 		}
-		else
+		else if (!in_word)
 		{
-			if (!in_segment)
-			{
-				in_segment = 1;
-				count++;
-			}
+			in_word = 1;
+			count++;	
 		}
 		i++;
 	}
 	return (count);
 }
 
-static void	add_str_arr(char const *s, char c, char *str)
-{       
-}
-
 char	**ft_split(char const *s, char c)
 {
 	int		i;
-	int		j;
-	char	*str;
-	char	**arr;
-	int		size_array;
-
-	size_array = count_c(s, c);
-	arr = (char **)malloc(size_array + 1 * sizeof(char *));
-	if (arr == NULL)
-	{
-		return (NULL);
-	}
+	int		n_times;
+	int		num_words;
+	int		num_chara;
+	char	*word;
+	char 	**arr;
 
 	i = 0;
-	while (s[i] != '\0')
+	num_words = words_count(s, c);
+	num_chara = 0;
+	n_times = 0;
+	arr = (char **)malloc((num_words + 1) * sizeof(char *));
+	if (!arr)
+		return (NULL);
+	while (n_times < num_words)
 	{
-		if (s[i] == c)
-		{ 
+		while (s[i] != '\0' && s[i] != c)
+        {
+            num_chara++;
+            i++;
         }
-		str[i] = s[i];
-		i++;   
+		
+		if (num_chara > 0)
+        {
+            word = (char *)malloc((num_chara + 1) * sizeof(char));
+            if (!word)
+                return (NULL);
+
+            ft_strlcpy(word, &s[i - num_chara], num_chara + 1);
+            arr[n_times] = word;
+            num_chara = 0;
+            n_times++;
+        }
+		while (s[i] == c) 
+		{
+        	i++;
+    	}
 	}
+	arr[n_times] = NULL;
+	return (arr);
+}
+
+int main(void)
+{
+	char *src = "Hola que tal";
+	
+	char **arr = ft_split(src, ' ');
+
+	int n = 3;
+
+	for(int i=0; i < n; i++)
+	{
+		printf("%s", arr[i]);
+		printf("\n");
+	}
+
 }

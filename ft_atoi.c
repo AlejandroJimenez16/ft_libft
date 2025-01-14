@@ -6,12 +6,18 @@
 /*   By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 12:17:41 by alejandj          #+#    #+#             */
-/*   Updated: 2025/01/13 16:18:48 by alejandj         ###   ########.fr       */
+/*   Updated: 2025/01/14 13:41:52 by alejandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief The atoi function (ASCII to Integer) converts a string
+ * representing a number into its corresponding integer value.
+ * 
+ * @return The converted value or 0 on error.
+ */
 int	ft_atoi(const char *nptr)
 {
 	int	i;
