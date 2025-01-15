@@ -6,13 +6,11 @@
 /*   By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 13:26:11 by alejandj          #+#    #+#             */
-/*   Updated: 2025/01/13 13:53:27 by alejandj         ###   ########.fr       */
+/*   Updated: 2025/01/15 16:03:24 by alejandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// NO PASA LA NORMI, MAS LINEAS QUE LAS QUE DEBERIA
 
 static int	obtain_num_digits(int n)
 {
@@ -53,6 +51,14 @@ static char	*special_cases(int n)
 	return (NULL);
 }
 
+/**
+ * @brief The itoa function (Integer to ASCII) converts an integer to a string.
+ * 
+ * This function converts the integer `n` into a string representation.
+ * 
+ * @param n The integer to convert.
+ * @return char* A pointer to the resulting string representation of the integer.
+ */
 char	*ft_itoa(int n)
 {
 	int		len;
