@@ -6,13 +6,11 @@
 /*   By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 13:11:29 by alejanjiga        #+#    #+#             */
-/*   Updated: 2025/01/15 13:54:24 by alejandj         ###   ########.fr       */
+/*   Updated: 2025/01/15 16:36:47 by alejandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-//MAÑANA OPTIMIZAR FUNCION
 
 static int	words_count(char const *s, char c)
 {
