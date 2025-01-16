@@ -380,3 +380,19 @@ int main (void)
     printf("\n");
     ft_putnbr_fd(-23451, fd);
 }
+
+----------------------------------
+            BONUS
+----------------------------------
+
+ft_lstnew
+---------
+
+int main(void)
+{
+	int a = 42;
+
+	t_list *node = ft_lstnew(&a);
+
+	printf("Contenido: %d", *(int*)node->content);
+}
