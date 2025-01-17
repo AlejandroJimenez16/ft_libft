@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 15:44:48 by alejandj          #+#    #+#             */
-/*   Updated: 2025/01/16 17:21:32 by alejandj         ###   ########.fr       */
+/*   Updated: 2025/01/17 16:04:53 by alejandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
 /**
  * @brief Adds a new node at the beggining of the list.
@@ -20,31 +20,10 @@
  */
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
+	if (!lst && !new)
+	{
+		return ;
+	}
 	new->next = *lst;
 	*lst = new;
 }
-
-/*
-int main(void)
-{
-	//VALORES
-	char *val1= "Primero";
-	char *val2 = "Segundo";
-
-	//CREAR NODOS
-	t_list *first = ft_lstnew(val1);
-	t_list *second = ft_lstnew(val2);
-	
-	//AÑADIR AL PRINCIPIO
-	ft_lstadd_front(&first, second);
-
-	//RECORRER LISTA
-	t_list *current = first;
-	
-	while(current != NULL)
-	{
-		printf("%s\n", (char *)current->content);
-		current = current->next;
-	}
-}
-*/

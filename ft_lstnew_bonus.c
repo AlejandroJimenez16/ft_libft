@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 15:13:36 by alejandj          #+#    #+#             */
-/*   Updated: 2025/01/16 16:52:51 by alejandj         ###   ########.fr       */
+/*   Updated: 2025/01/17 13:22:57 by alejandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
 /**
  * @brief Create a new list node.
  * 
- * This function creates a new node and initializes it with the value of `content`.
+ * This function creates a new node and initializes it with the value of 
+ * `content`.
  * 
  * @param content The content to store in the new node.
  * @return (t_list*) A pointer to the newly created node.
