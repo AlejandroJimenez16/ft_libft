@@ -396,3 +396,31 @@ int main(void)
 
 	printf("Contenido: %d", *(int*)node->content);
 }
+
+ft_lstadd_front
+---------------
+
+/*
+int main(void)
+{
+	//VALORES
+	char *val1= "Primero";
+	char *val2 = "Segundo";
+
+	//CREAR NODOS
+	t_list *first = ft_lstnew(val1);
+	t_list *second = ft_lstnew(val2);
+	
+	//AÑADIR AL PRINCIPIO
+	ft_lstadd_front(&first, second);
+
+	//RECORRER LISTA
+	t_list *current = first;
+	
+	while(current != NULL)
+	{
+		printf("%s\n", (char *)current->content);
+		current = current->next;
+	}
+}
+*/
