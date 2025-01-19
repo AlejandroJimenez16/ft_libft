@@ -6,7 +6,7 @@
 /*   By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 13:11:29 by alejanjiga        #+#    #+#             */
-/*   Updated: 2025/01/15 16:36:47 by alejandj         ###   ########.fr       */
+/*   Updated: 2025/01/19 21:54:06 by alejandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,95 +15,90 @@
 static int	words_count(char const *s, char c)
 {
 	int	i;
-	int	in_word;
 	int	count;
+	int	in_word;
 
-	in_word = 0;
-	count = 0;
 	i = 0;
-	while (s[i] != '\0')
+	count = 0;
+	in_word = 0;
+	while (s[i])
 	{
-		if (s[i] == c)
-		{
-			in_word = 0;
-		}
-		else if (!in_word)
+		if (s[i] != c && !in_word)
 		{
 			in_word = 1;
 			count++;
 		}
+		else if (s[i] == c)
+			in_word = 0;
 		i++;
 	}
 	return (count);
 }
 
-static void	initialize_vars(int *i, int *n_times, int *num_chara)
-{
-	*i = 0;
-	*num_chara = 0;
-	*n_times = 0;
-}
-
-static int	create_add_word(int num_chara, char const *s, int i,
-	char **arr, int n_times)
+static char	*create_word(char const *s, int start, int len)
 {
 	char	*word;
 
-	word = (char *)malloc((num_chara + 1) * sizeof(char));
+	word = (char *)malloc((len + 1) * sizeof(char));
 	if (!word)
-		return (1);
-	ft_strlcpy(word, &s[i - num_chara], num_chara + 1);
-	arr[n_times] = word;
+		return (NULL);
+	ft_strlcpy(word, &s[start], len + 1);
+	return (word);
+}
+
+static int	process_word(char const *s, char c, char **arr, int *stored_words)
+{
+	int	start;
+	int	len;
+	int	i;
+
+	i = 0;
+	start = 0;
+	len = 0;
+	while (s[i])
+	{
+		if (s[i] != c && len++ == 0)
+			start = i;
+		else if ((s[i] == c || s[i + 1] == '\0') && len > 0)
+		{
+			arr[*stored_words] = create_word(s, start, len);
+			if (!arr[*stored_words])
+				return (1);
+			(*stored_words)++;
+			len = 0;
+		}
+		i++;
+	}
 	return (0);
 }
 
+/**
+ * @brief Splits a string into substrings based on a delimiter.
+ *
+ * This function divides a given string into multiple substrings based on a
+ * specified delimiter character. It returns an array of strings (each string
+ * being a substring) and the array is terminated with a NULL pointer.
+ *
+ * @param s The string to be split. This is the input string that will
+ * be divided into substrings.
+ * @param c The character used to split the string.
+ * @return A dynamically allocated array of substrings (NULL-terminated).
+ */
 char	**ft_split(char const *s, char c)
 {
-	int		i;
-	int		n_times;
 	int		num_words;
-	int		num_chara;
+	int		stored_words;
 	char	**arr;
 
-	initialize_vars(&i, &n_times, &num_chara);
+	if (!s)
+		return (NULL);
 	num_words = words_count(s, c);
 	arr = (char **)malloc((num_words + 1) * sizeof(char *));
 	if (!arr)
 		return (NULL);
-	while (n_times < num_words)
-	{
-		num_chara = 0;
-		while (s[i] != '\0' && s[i] != c)
-		{
-			num_chara++;
-			i++;
-		}
-		if (num_chara > 0)
-		{
-			if (create_add_word(num_chara, s, i, arr, n_times) == 1)
-				return (NULL);
-			n_times++;
-		}	
-		while (s[i] == c)
-			i++;
-	}
-	arr[n_times] = NULL;
+	stored_words = 0;
+	if (process_word(s, c, arr, &stored_words) == 1)
+		return (NULL);
+	arr[stored_words] = NULL;
 	return (arr);
-}
-
-int main(void)
-{
-    char *src = " Hola que tal paquito y juancoo ";
-    
-    char **arr = ft_split(src, ' ');
-
-    int n = words_count(src, ' ');
-
-    for(int i=0; i < n; i++)
-    {
-        printf("%s", arr[i]);
-        printf("\n");
-        free(arr[i]);
-    }
-    free(arr);
 }
