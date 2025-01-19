@@ -283,6 +283,23 @@ int main()
 #ft_split
 ---------
 
+int	main(void)
+{
+	char *src = "Hola,que,tal,como,estas,hsdjhwe";
+
+	char **arr = ft_split(src, ',');
+
+	int n = words_count(src, ',');
+
+	for (int i = 0; i < n; i++)
+	{
+		printf("%s", arr[i]);
+		printf("\n");
+		free(arr[i]);
+	}
+	free(arr);
+}
+
 #ft_itoa
 ---------
 
