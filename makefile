@@ -43,7 +43,7 @@ OBJECTS = ${SRC:.c=.o}
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	$(CC) $(CFLAGS) -c $(FILES)
+	$(CC) $(CFLAGS) -c $(SRC)
 	@ar rcs $(NAME) $(OBJECTS)
 	@echo "Library $(NAME) created."
 
