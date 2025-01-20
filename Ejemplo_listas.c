@@ -10,14 +10,18 @@ int main(void)
     t_list *lst = NULL;
 
     //Valores
-    int a = 1;
-    int b = 2;
-    int c = 3;
+    int *a = malloc(sizeof(int));
+    int *b = malloc(sizeof(int));
+    int *c = malloc(sizeof(int));
+
+    *a = 1;
+    *b = 2;
+    *c = 3;
 
     //Creo los nodos
-    t_list *nodo1 = ft_lstnew(&a);
-    t_list *nodo2 = ft_lstnew(&b);
-    t_list *nodo3 = ft_lstnew(&c);
+    t_list *nodo1 = ft_lstnew(a);
+    t_list *nodo2 = ft_lstnew(b);
+    t_list *nodo3 = ft_lstnew(c);
 
     //Añado los nodos al principio de la lista
     ft_lstadd_front(&lst, nodo1);
@@ -41,7 +45,9 @@ int main(void)
     printf("El ultimo nodo es: %d\n", *(int *)last_node->content);
 
     //Añadir un nodo a la ultima posicion
-    int d = 4;
+    int *d = malloc(sizeof(int));
+    *d = 4;
+
     t_list *nodo4 = ft_lstnew(&d);
 
     ft_lstadd_back(&lst, nodo4);
@@ -53,7 +59,6 @@ int main(void)
         current = current->next;
     }
 
-    /*
     //Elimino el ultimo elemento
     ft_lstdelone(nodo4, del);
 
@@ -65,7 +70,6 @@ int main(void)
         printf("%d\n", *(int *)current->content);
         current = current->next;
     }
-    */
     
 }
     

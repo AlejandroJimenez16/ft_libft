@@ -6,7 +6,7 @@
 /*   By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 16:27:11 by alejandj          #+#    #+#             */
-/*   Updated: 2025/01/16 14:52:56 by alejandj         ###   ########.fr       */
+/*   Updated: 2025/01/20 02:58:20 by alejandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	i = 0;
 	d = (unsigned char *)dest;
 	s = (const unsigned char *)src;
+	if (!dest && !src)
+		return (NULL);
 	while (i < n)
 	{
 		d[i] = s[i];
