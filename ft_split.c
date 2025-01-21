@@ -6,7 +6,7 @@
 /*   By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 13:11:29 by alejanjiga        #+#    #+#             */
-/*   Updated: 2025/01/19 21:54:06 by alejandj         ###   ########.fr       */
+/*   Updated: 2025/01/21 16:37:26 by alejandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,61 +15,43 @@
 static int	words_count(char const *s, char c)
 {
 	int	i;
-	int	count;
 	int	in_word;
+	int	count;
 
-	i = 0;
-	count = 0;
 	in_word = 0;
-	while (s[i])
+	count = 0;
+	i = 0;
+	while (s[i] != '\0')
 	{
-		if (s[i] != c && !in_word)
+		if (s[i] == c)
+		{
+			in_word = 0;
+		}
+		else if (!in_word)
 		{
 			in_word = 1;
 			count++;
 		}
-		else if (s[i] == c)
-			in_word = 0;
 		i++;
 	}
 	return (count);
 }
 
-static char	*create_word(char const *s, int start, int len)
+static void	initialize_vars(int *i, int *n_times, int *num_chara)
 {
-	char	*word;
-
-	word = (char *)malloc((len + 1) * sizeof(char));
-	if (!word)
-		return (NULL);
-	ft_strlcpy(word, &s[start], len + 1);
-	return (word);
+	*i = 0;
+	*num_chara = 0;
+	*n_times = 0;
 }
 
-static int	process_word(char const *s, char c, char **arr, int *stored_words)
+static	void	obtain_num_chara(char const *s, char c, int *num_chara, int *i)
 {
-	int	start;
-	int	len;
-	int	i;
-
-	i = 0;
-	start = 0;
-	len = 0;
-	while (s[i])
+	*num_chara = 0;
+	while (s[*i] != '\0' && s[*i] != c)
 	{
-		if (s[i] != c && len++ == 0)
-			start = i;
-		else if ((s[i] == c || s[i + 1] == '\0') && len > 0)
-		{
-			arr[*stored_words] = create_word(s, start, len);
-			if (!arr[*stored_words])
-				return (1);
-			(*stored_words)++;
-			len = 0;
-		}
-		i++;
+		(*num_chara)++;
+		(*i)++;
 	}
-	return (0);
 }
 
 /**
@@ -86,19 +68,29 @@ static int	process_word(char const *s, char c, char **arr, int *stored_words)
  */
 char	**ft_split(char const *s, char c)
 {
+	int		i;
+	int		n_times;
 	int		num_words;
-	int		stored_words;
+	int		num_chara;
 	char	**arr;
 
-	if (!s)
-		return (NULL);
+	initialize_vars(&i, &n_times, &num_chara);
 	num_words = words_count(s, c);
 	arr = (char **)malloc((num_words + 1) * sizeof(char *));
 	if (!arr)
 		return (NULL);
-	stored_words = 0;
-	if (process_word(s, c, arr, &stored_words) == 1)
-		return (NULL);
-	arr[stored_words] = NULL;
+	while (n_times < num_words)
+	{
+		obtain_num_chara(s, c, &num_chara, &i);
+		if (num_chara > 0)
+		{
+			arr[n_times] = ft_substr(s, i - num_chara, num_chara);
+			if (!arr[n_times++])
+				return (NULL);
+		}
+		while (s[i] == c)
+			i++;
+	}
+	arr[n_times] = NULL;
 	return (arr);
 }
