@@ -6,7 +6,7 @@
 /*   By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 13:54:22 by alejandj          #+#    #+#             */
-/*   Updated: 2025/01/17 16:05:25 by alejandj         ###   ########.fr       */
+/*   Updated: 2025/01/21 11:35:01 by alejandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,7 @@ t_list	*ft_lstlast(t_list *lst)
 	while (current != NULL)
 	{
 		if (current->next == NULL)
-		{
 			return (current);
-		}
 		current = current->next;
 	}
 	return (NULL);

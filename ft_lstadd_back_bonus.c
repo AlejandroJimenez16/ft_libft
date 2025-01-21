@@ -6,7 +6,7 @@
 /*   By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 15:01:09 by alejandj          #+#    #+#             */
-/*   Updated: 2025/01/20 02:25:26 by alejandj         ###   ########.fr       */
+/*   Updated: 2025/01/21 11:34:11 by alejandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	}
 	current = *lst;
 	while (current->next != NULL)
-	{
 		current = current->next;
-	}
 	current->next = new;
 }

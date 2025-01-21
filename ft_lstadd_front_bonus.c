@@ -6,7 +6,7 @@
 /*   By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 15:44:48 by alejandj          #+#    #+#             */
-/*   Updated: 2025/01/17 16:04:53 by alejandj         ###   ########.fr       */
+/*   Updated: 2025/01/21 11:34:21 by alejandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!lst && !new)
-	{
 		return ;
-	}
 	new->next = *lst;
 	*lst = new;
 }

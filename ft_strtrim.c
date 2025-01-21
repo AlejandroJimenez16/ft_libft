@@ -6,7 +6,7 @@
 /*   By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 19:12:40 by alejanjiga        #+#    #+#             */
-/*   Updated: 2025/01/20 03:51:47 by alejandj         ###   ########.fr       */
+/*   Updated: 2025/01/21 11:40:08 by alejandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ static int	is_in_set(char c, char const *set)
 	while (set[i] != '\0')
 	{
 		if (set[i] == c)
-		{
 			return (1);
-		}
 		i++;
 	}
 	return (0);
@@ -33,13 +31,9 @@ static void	get_start_end(int *start, int *end, char const *s1, char const *set)
 	*start = 0;
 	*end = ft_strlen(s1) - 1;
 	while (s1[*start] != '\0' && is_in_set(s1[*start], set))
-	{
 		(*start)++;
-	}
 	while (*end > *start && is_in_set(s1[*end], set))
-	{
 		(*end)--;
-	}
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -51,9 +45,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		i;
 
 	if (!s1 || !set)
-	{
 		return (NULL);
-	}
 	get_start_end(&start, &end, s1, set);
 	len = end - start + 1;
 	result = (char *)malloc((len + 1) * sizeof(char));

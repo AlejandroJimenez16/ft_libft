@@ -6,7 +6,7 @@
 /*   By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 20:18:23 by alejandj          #+#    #+#             */
-/*   Updated: 2025/01/14 11:35:26 by alejandj         ###   ########.fr       */
+/*   Updated: 2025/01/21 11:38:31 by alejandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dsize)
 	origin_size_dst = ft_strlen(dst);
 	origin_size_src = ft_strlen(src);
 	if (dsize <= origin_size_dst)
-	{
 		return (dsize + origin_size_src);
-	}
 	i = 0;
 	while (src[i] != '\0' && i < dsize - origin_size_dst - 1)
 	{

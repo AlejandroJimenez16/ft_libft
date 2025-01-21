@@ -6,7 +6,7 @@
 /*   By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 13:26:11 by alejandj          #+#    #+#             */
-/*   Updated: 2025/01/15 16:03:24 by alejandj         ###   ########.fr       */
+/*   Updated: 2025/01/21 11:33:03 by alejandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ static int	obtain_num_digits(int n)
 
 	len = 0;
 	if (n == 0)
-	{
 		return (1);
-	}
 	if (n < 0)
 	{
 		len++;

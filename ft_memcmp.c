@@ -6,7 +6,7 @@
 /*   By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 16:24:12 by alejandj          #+#    #+#             */
-/*   Updated: 2025/01/16 14:52:10 by alejandj         ###   ########.fr       */
+/*   Updated: 2025/01/21 11:35:53 by alejandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	while (i < n)
 	{
 		if (p1[i] != p2[i])
-		{
 			return (p1[i] - p2[i]);
-		}
 		i++;
 	}
 	return (0);
