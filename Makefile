@@ -37,8 +37,17 @@ SRC =	ft_isalpha.c		\
 		ft_putstr_fd.c		\
 		ft_putendl_fd.c		\
 		ft_putnbr_fd.c		\
-	
+
+SRC_BONUS =	ft_lstnew_bonus.c			\
+			ft_lstadd_front_bonus.c		\
+			ft_lstsize_bonus.c			\
+			ft_lstlast_bonus.c			\
+			ft_lstadd_back_bonus.c		\
+			ft_lstdelone_bonus.c		\
+
+
 OBJECTS = ${SRC:.c=.o}
+OBJECTS_BONUS = ${SRC_BONUS:.c=.o}
 
 all: $(NAME)
 
@@ -51,7 +60,7 @@ $(NAME): $(OBJECTS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@rm -rf $(OBJECTS)
+	@rm -rf $(OBJECTS) $(OBJECTS_BONUS)
 	@echo "Object files removed."
 
 fclean: clean
@@ -59,3 +68,8 @@ fclean: clean
 	@echo "Library $(NAME) removed"
 
 re: fclean all
+
+bonus: $(OBJECTS_BONUS)
+	$(CC) $(CFLAGS) -c $(SRC_BONUS)
+	@ar rcs $(NAME) $(OBJECTS) $(OBJECTS_BONUS)
+	@echo "Bonus objects compiled and library updated."
