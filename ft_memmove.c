@@ -6,7 +6,7 @@
 /*   By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 16:30:47 by alejandj          #+#    #+#             */
-/*   Updated: 2025/01/16 14:53:42 by alejandj         ###   ########.fr       */
+/*   Updated: 2025/01/21 17:12:03 by alejandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,14 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t				i;
 	unsigned char		*d;
-	const unsigned char	*s;
-	unsigned char		temp[1024];
+	unsigned char		*s;
+	unsigned char		temp[n];
 
 	i = 0;
 	d = (unsigned char *)dest;
-	s = (const unsigned char *)src;
+	s = (unsigned char *)src;
+	if (!dest && !src)
+		return (NULL);
 	while (i < n)
 	{
 		temp[i] = s[i];
