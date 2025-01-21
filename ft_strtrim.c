@@ -6,7 +6,7 @@
 /*   By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 19:12:40 by alejanjiga        #+#    #+#             */
-/*   Updated: 2025/01/21 11:40:08 by alejandj         ###   ########.fr       */
+/*   Updated: 2025/01/21 13:16:06 by alejandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 		result[i] = s1[start + i];
 		i++;
 	}
-	result[start + i] = '\0';
+	result[i] = '\0';
 	return (result);
 }

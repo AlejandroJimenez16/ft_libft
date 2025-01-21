@@ -6,7 +6,7 @@
 /*   By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 13:11:27 by alejandj          #+#    #+#             */
-/*   Updated: 2025/01/21 11:31:12 by alejandj         ###   ########.fr       */
+/*   Updated: 2025/01/21 13:05:09 by alejandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*p;
 
-	if (nmemb == 0 || size == 0)
-		return (NULL);
 	p = malloc(nmemb * size);
 	if (!p)
 		return (NULL);
