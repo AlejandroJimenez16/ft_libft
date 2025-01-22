@@ -1,4 +1,5 @@
 #include "libft.h"
+#include <stdio.h>
 
 void del(void *content)
 {
@@ -48,8 +49,9 @@ int main(void)
     int *d = malloc(sizeof(int));
     *d = 4;
 
-    t_list *nodo4 = ft_lstnew(&d);
+    t_list *nodo4 = ft_lstnew(d);
 
+    printf("Añado un nuevo nodo: \n");
     ft_lstadd_back(&lst, nodo4);
 
     current = lst;
@@ -59,17 +61,29 @@ int main(void)
         current = current->next;
     }
 
+    /*
     //Elimino el ultimo elemento
     ft_lstdelone(nodo4, del);
 
-    printf("Despues de eliminar uno: \n");
+    if (lst == nodo4)
+        lst = NULL;
+    else
+    {
+        current = lst;
+        while (current != NULL && current->next != nodo4)
+            current = current->next;  // Avanza hasta el penúltimo nodo
+        if (current != NULL)
+            current->next = NULL;  // El penúltimo nodo ahora apunta a NULL
+    }
 
+    printf("Despues de eliminar uno: \n");
     current = lst;
     while (current != NULL)
     {
         printf("%d\n", *(int *)current->content);
         current = current->next;
     }
-    
+    */
+   
 }
     
