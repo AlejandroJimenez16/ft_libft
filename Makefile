@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/01/22 12:50:32 by alejandj          #+#    #+#              #
+#    Updated: 2025/01/22 16:10:31 by alejandj         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libft.a
 
 CC = cc
@@ -38,13 +50,16 @@ SRC =	ft_isalpha.c		\
 		ft_putendl_fd.c		\
 		ft_putnbr_fd.c		\
 
-SRC_BONUS =	ft_lstnew_bonus.c			\
+
+SRC_BONUS = ft_lstnew_bonus.c			\
 			ft_lstadd_front_bonus.c		\
 			ft_lstsize_bonus.c			\
 			ft_lstlast_bonus.c			\
 			ft_lstadd_back_bonus.c		\
 			ft_lstdelone_bonus.c		\
-
+			ft_lstclear_bonus.c			\
+			ft_lstiter_bonus.c			\
+			ft_lstmap_bonus.c			\
 
 OBJECTS = ${SRC:.c=.o}
 OBJECTS_BONUS = ${SRC_BONUS:.c=.o}
