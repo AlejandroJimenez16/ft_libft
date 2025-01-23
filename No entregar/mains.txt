@@ -1,0 +1,443 @@
+#ft_is***
+-----------
+
+#include <stdio.h>
+#include <ctype.h>
+
+int main(void)
+{
+    int c = 'a';
+    
+    printf("Original: %d\n", isalpha(c));
+    printf("Copia: %d\n", ft_isalpha(c));
+}
+
+#ft_strlen
+-----------
+
+#include <string.h>
+
+int main(void)
+{
+	char *str = "holaa";
+
+	printf("Original: %ld\n", strlen(str));
+    printf("Copia: %ld\n", ft_strlen(str));
+}
+
+#ft_memset
+-----------
+
+#include <string.h>
+
+int main(void)
+{
+    char buffer[10];
+    size_t i;
+
+    ft_memset(buffer, 'c', sizeof(buffer));
+
+    i = 0;
+    while(i < sizeof(buffer))
+    {
+        printf("%c", buffer[i]);
+        i++;
+    }
+}
+
+#ft_bzero
+----------
+
+#include <strings.h>
+
+int main(void)
+{
+    char buffer[5];
+    size_t i;
+
+    ft_bzero(buffer, sizeof(buffer));
+
+    i = 0;
+    while (i < sizeof(buffer))
+    {
+        printf("%d", buffer[i]);
+        i++;
+    }
+}
+
+#ft_memcpy
+----------
+
+#include <string.h>
+
+int main(void)
+{
+    char dest[50];
+    char *src = "holaquetal";
+    size_t n = 5;
+
+    ft_memcpy(dest, src, n);
+    
+    printf("%s\n", dest);
+}
+
+#ft_memmove
+-----------
+
+#include <string.h>
+
+int main(void)
+{
+    char buffer[10] = "abcdefg";
+
+    printf("Antes: %s\n", buffer);
+
+    ft_memmove(buffer + 3, buffer, 5);
+
+    printf("Después: %s\n", buffer);
+}
+
+#ft_strlcpy
+-----------
+
+#include <string.h>
+
+int main()
+{
+    char dest[3];
+    char *src = "hola";
+
+    int tot_size = ft_strlcpy(dest, src, sizeof(dest));
+    printf("Tamaño de src: %d\n", tot_size);
+	printf("Cadena de destino: %s\n", dest);
+}
+
+#ft_strlcat
+-----------
+
+#include <string.h>
+
+int main(void)
+{
+	char dest[15] = "Hola";
+	char *src = " Mundo";
+	
+	int result = ft_strlcat(dest, src, 8);
+	
+	printf("Mi version: %d\n", result);
+
+	printf("Destino: %s\n", dest);
+}
+
+#ft_strchr y #ft_strchr
+-----------------------
+
+#include <string.h>
+
+int main(void)
+{
+    char *s = "holas";
+    int c = 'H';
+    
+    char *result = ft_strchr(s, c);
+    if (result) {
+        printf("%s\n", result);
+    } else {
+        printf("Carácter no encontrado.\n");
+    }
+}
+
+#ft_strncmp
+-----------
+
+#include <string.h>
+
+int main(void)
+{
+    char *s1 = "abc";
+    char *s2 = "abcd";
+    int n = 5;
+
+    printf("Original: %d\n", strncmp(s1, s2, n));
+    printf("Copia: %d\n", ft_strncmp(s1, s2, n));
+}
+
+#ft_memchr
+-----------
+
+#include <string.h>
+
+int main() {
+    char *buffer = "Hola mundo!";
+    void *result = ft_memchr(buffer, 'm', sizeof(buffer));
+
+    if (result != NULL) {
+        printf("Puntero encontrado: %p\n", result);
+        printf("Carácter encontrado: %c\n", *(char *)result);
+    } else {
+        printf("Carácter no encontrado.\n");
+    }
+}
+
+#ft_memcmp
+----------
+
+#include <string.h>
+
+int main(void)
+{
+    char *s1 = "hola";
+    char *s2 = "holo";
+    size_t n = 4;
+    
+    printf("Original: %d\n", memcmp(s1, s2, n));
+    printf("Copia: %d\n", ft_memcmp(s1, s2, n));    
+}
+
+#ft_strnstr
+-----------
+
+int main()
+{
+    const char *haystack = "Hello, world!";
+    const char *needle = "world";
+    size_t len = 12;
+
+    char *result = ft_strnstr(haystack, needle, len);
+
+    if (result)
+        printf("Encontrado: %s\n", result);
+    else
+        printf("No encontrado\n");
+
+    return 0;
+}
+
+#ft_atoi
+--------
+
+#include <stdlib.h>
+
+int main(void)
+{
+    char *str = " +2345";
+
+    printf("Original: %d\n", atoi(str));
+    printf("Copia: %d\n", ft_atoi(str));
+}
+
+#ft_calloc
+--------
+
+#ft_strdup
+----------
+
+int main(void)
+{
+    char *s = "ola k asee";
+    char *str;
+
+    str = ft_strdup(s);
+
+    printf("%s\n", str);
+}
+
+#ft_substr
+----------
+
+int main(void)
+{
+    char *s = "ola que ase";
+    char *sub = ft_substr(s, 4, 7);
+    printf("%s\n", sub);
+    free(sub);
+}
+
+#ft_strjoin
+-----------
+
+int main(void)
+{
+    char *s1 = "QueFeo";
+    char *s2 = "Eres Nah";
+    
+    char *join = ft_strjoin(s1, s2);
+
+    printf("%s\n", join);
+}
+
+#ft_strtrim
+-----------
+
+int main()
+{
+    char s1[] = "###Hello World#####";
+    char set[] = "#";
+
+    char *result = ft_strtrim(s1, set);
+    
+    printf("Resultado: '%s'\n", result);
+    return 0;
+}
+
+#ft_split
+---------
+
+int	main(void)
+{
+	char *src = "Hola,que,tal,como,estas,hsdjhwe";
+
+	char **arr = ft_split(src, ',');
+
+	int n = words_count(src, ',');
+
+	for (int i = 0; i < n; i++)
+	{
+		printf("%s", arr[i]);
+		printf("\n");
+		free(arr[i]);
+	}
+	free(arr);
+}
+
+#ft_itoa
+---------
+
+int main (void)
+{
+    int n = INT_MAX;
+    
+    char *str = ft_itoa(n);
+    
+    printf("%s\n", str);
+
+    n = INT_MIN;
+    str = ft_itoa(n);
+    
+    printf("%s\n", str);
+
+    return (0);
+}
+
+#ft_strmapi
+-----------
+
+char prueba(unsigned int index, char c) {
+    return c + index;
+}
+
+int main() {
+    const char *original = "abcd";
+    char *modified = ft_strmapi(original, prueba);
+
+    if (modified) {
+        printf("Original: %s\n", original);
+        printf("Modificada: %s\n", modified);
+        free(modified);
+    }
+
+}
+
+#ft_striteri
+------------
+
+void to_upper(unsigned int index, char *c)
+{
+    if (index % 2 == 0)
+        *c = ft_toupper(*c);
+}
+
+int main()
+{
+    char str[] = "hola mundo";
+
+    printf("Antes: %s\n", str);
+
+    ft_striteri(str, to_upper);
+
+    printf("Después: %s\n", str);
+
+}
+
+#ft_putchar_fd
+--------------
+
+int main(void) 
+{    
+    ft_putchar_fd('A', 1);
+    ft_putchar_fd('\n', 1);
+
+    ft_putchar_fd('B', 2);
+    ft_putchar_fd('\n', 2);
+}
+
+ft_putstr_fd & ft_putendl_fd
+----------------------------
+
+int main(void) 
+{    
+    char *s = "Hello, World!";
+    int fd = 1;
+
+    ft_putstr_fd(s, fd);
+}
+
+ft_putnbr_fd
+-------------
+
+int main (void)
+{
+    int fd = 1;
+    
+    ft_putnbr_fd(-2147483648, fd);
+    printf("\n");
+    ft_putnbr_fd(2147483647, fd);
+    printf("\n");
+    ft_putnbr_fd(0, fd);
+    printf("\n");
+    ft_putnbr_fd(-23451, fd);
+}
+
+----------------------------------
+            BONUS
+----------------------------------
+
+ft_lstnew
+---------
+
+int main(void)
+{
+	int a = 42;
+
+	t_list *node = ft_lstnew(&a);
+
+	printf("Contenido: %d", *(int*)node->content);
+}
+
+ft_lstadd_front
+---------------
+
+/*
+int main(void)
+{
+	//VALORES
+	char *val1= "Primero";
+	char *val2 = "Segundo";
+
+	//CREAR NODOS
+	t_list *first = ft_lstnew(val1);
+	t_list *second = ft_lstnew(val2);
+	
+	//AÑADIR AL PRINCIPIO
+	ft_lstadd_front(&first, second);
+
+	//RECORRER LISTA
+	t_list *current = first;
+	
+	while(current != NULL)
+	{
+		printf("%s\n", (char *)current->content);
+		current = current->next;
+	}
+}
+*/
