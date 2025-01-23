@@ -6,7 +6,7 @@
 /*   By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 13:26:11 by alejandj          #+#    #+#             */
-/*   Updated: 2025/01/21 11:33:03 by alejandj         ###   ########.fr       */
+/*   Updated: 2025/01/23 13:25:59 by alejandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,23 +32,6 @@ static int	obtain_num_digits(int n)
 	return (len);
 }
 
-static char	*special_cases(int n)
-{
-	char	*result;
-
-	if (n == INT_MIN)
-	{
-		result = ft_strdup("-2147483648");
-		return (result);
-	}
-	if (n == INT_MAX)
-	{
-		result = ft_strdup("2147483647");
-		return (result);
-	}
-	return (NULL);
-}
-
 /**
  * @brief The itoa function (Integer to ASCII) converts an integer to a string.
  * 
@@ -61,11 +44,9 @@ char	*ft_itoa(int n)
 {
 	int		len;
 	char	*str;
-	char	*limit_str;
 
-	limit_str = special_cases(n);
-	if (limit_str)
-		return (limit_str);
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
 	len = obtain_num_digits(n);
 	str = (char *)malloc((len + 1) * sizeof(char));
 	if (!str)
