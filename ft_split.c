@@ -6,7 +6,7 @@
 /*   By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 13:11:29 by alejanjiga        #+#    #+#             */
-/*   Updated: 2025/01/21 16:37:26 by alejandj         ###   ########.fr       */
+/*   Updated: 2025/01/23 12:39:13 by alejandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,17 @@ static	void	obtain_num_chara(char const *s, char c, int *num_chara, int *i)
 	}
 }
 
+static void	*freestr(char **arr)
+{
+	int	i;
+
+	i = 0;
+	while (arr[i])
+		free(arr[i++]);
+	free(arr);
+	return (NULL);
+}
+
 /**
  * @brief Splits a string into substrings based on a delimiter.
  *
@@ -86,7 +97,7 @@ char	**ft_split(char const *s, char c)
 		{
 			arr[n_times] = ft_substr(s, i - num_chara, num_chara);
 			if (!arr[n_times++])
-				return (NULL);
+				return (freestr(arr));
 		}
 		while (s[i] == c)
 			i++;
@@ -94,3 +105,22 @@ char	**ft_split(char const *s, char c)
 	arr[n_times] = NULL;
 	return (arr);
 }
+/*
+
+int	main()
+{
+	char *src = "^^^1^^2a,^^^^3^^^^--h^^^^";
+
+	char **arr = ft_split("xxxxxxxxhello!", 'x');
+
+	int n = words_count(src, 'x');
+
+	for (int i = 0; i < n; i++)
+	{
+		printf("%s", arr[i]);
+		printf("\n");
+		free(arr[i]);
+	}
+	free(arr);
+}
+*/

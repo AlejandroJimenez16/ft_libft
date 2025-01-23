@@ -6,7 +6,7 @@
 #    By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/22 12:50:32 by alejandj          #+#    #+#              #
-#    Updated: 2025/01/22 16:10:31 by alejandj         ###   ########.fr        #
+#    Updated: 2025/01/23 14:02:02 by alejandj         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,6 +85,6 @@ fclean: clean
 re: fclean all
 
 bonus: $(OBJECTS_BONUS)
-	$(CC) $(CFLAGS) -c $(SRC_BONUS)
+	$(CC) $(CFLAGS) -c $(SRC) $(SRC_BONUS)
 	@ar rcs $(NAME) $(OBJECTS) $(OBJECTS_BONUS)
 	@echo "Bonus objects compiled and library updated."
