@@ -6,7 +6,7 @@
 #    By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/22 12:50:32 by alejandj          #+#    #+#              #
-#    Updated: 2025/01/23 14:02:02 by alejandj         ###   ########.fr        #
+#    Updated: 2025/01/26 13:06:32 by alejandj         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,12 +64,11 @@ SRC_BONUS = ft_lstnew_bonus.c			\
 OBJECTS = ${SRC:.c=.o}
 OBJECTS_BONUS = ${SRC_BONUS:.c=.o}
 
-all: $(NAME)
-
 $(NAME): $(OBJECTS)
-	$(CC) $(CFLAGS) -c $(SRC)
 	@ar rcs $(NAME) $(OBJECTS)
 	@echo "Library $(NAME) created."
+
+all: $(NAME) bonus
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -85,6 +84,5 @@ fclean: clean
 re: fclean all
 
 bonus: $(OBJECTS_BONUS)
-	$(CC) $(CFLAGS) -c $(SRC) $(SRC_BONUS)
-	@ar rcs $(NAME) $(OBJECTS) $(OBJECTS_BONUS)
+	@ar rcs $(NAME) $(OBJECTS_BONUS)
 	@echo "Bonus objects compiled and library updated."
